@@ -53,9 +53,10 @@
                     totalMinutos += 24 * 60;
                 }
 
-                const totalPagar = totalMinutos + costo;
+                const totalPagar = totalMinutos * costo;
 
-                document.getElementById('resultado').innerText = `Total a pagar: $${totalPagar.toLocaleString('es-CO')}`;
+                document.getElementById('resultado').innerText = `Total a pagar: $${totalPagar.toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
             }
 
             function limpiar() {
